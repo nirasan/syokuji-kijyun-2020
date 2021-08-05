@@ -3,50 +3,61 @@ package pkg
 // Energy は「日本人の食事摂取基準」（2020年版）の PDF 91 ページにある表「推定エネルギー必要量」の情報を持つ
 type Energy struct {
 	gender, age, activityLevel int
+	datum                      *EnergyDatum
 }
 
-// NewEnergy は Energy の構造体を返す
+// NewEnergy は Energy を返す
 func NewEnergy(gender, age, activityLevel int) *Energy {
-	return &Energy{
+	e := &Energy{
 		gender:        gender,
 		age:           age,
 		activityLevel: activityLevel,
 	}
+	e.datum = e.GetDatum()
+	return e
+}
+
+// NewEnergyForPregnantWoman は妊婦向けに付加量を加えられた Energy を返す
+func NewEnergyForPregnantWoman(gender, age, activityLevel, term int) *Energy {
+	e := NewEnergy(gender, age, activityLevel)
+	if gender == GenderFemale {
+		switch term {
+		case TermEarly:
+			e.datum.Value.Value += 50
+		case TermMid:
+			e.datum.Value.Value += 250
+		case TermLate:
+			e.datum.Value.Value += 450
+		}
+	}
+	return e
+}
+
+// NewEnergyForLactatingWoman は授乳婦向けに付加量を加えられた Energy を返す
+func NewEnergyForLactatingWoman(gender, age, activityLevel int) *Energy {
+	e := NewEnergy(gender, age, activityLevel)
+	if gender == GenderFemale {
+		e.datum.Value.Value += 350
+	}
+	return e
+}
+
+// GetDatum は EnergyDatum を返す
+func (e *Energy) GetDatum() *EnergyDatum {
+	for _, d := range e.Data() {
+		if d.Gender == e.gender && d.Age == e.age && d.ActivityLevel == e.activityLevel {
+			return &d
+		}
+	}
+	return nil
 }
 
 // Get はエネルギーの必要量（kcal）を返す
 func (e *Energy) Get() (float64, bool) {
-	for _, d := range e.Data() {
-		if d.Gender == e.gender && d.Age == e.age && d.ActivityLevel == e.activityLevel {
-			return d.Value.Value, d.Value.Valid
-		}
+	if e.datum != nil {
+		return e.datum.Value.Flatten()
 	}
 	return 0, false
-}
-
-// GetForPregnantWoman は妊婦のエネルギーの必要量を返す
-func (e *Energy) GetForPregnantWoman(term int) (float64, bool) {
-	v, ok := e.Get()
-	if ok && e.gender == GenderFemale {
-		switch term {
-		case TermEarly:
-			v += 50
-		case TermMid:
-			v += 250
-		case TermLate:
-			v += 450
-		}
-	}
-	return v, ok
-}
-
-// GetForLactatingWoman は授乳婦のエネルギーの必要量を返す
-func (e *Energy) GetForLactatingWoman() (float64, bool) {
-	v, ok := e.Get()
-	if ok && e.gender == GenderFemale {
-		v += 350
-	}
-	return v, ok
 }
 
 // EnergyDatum はエネルギーの必要量テーブル情報を持つ

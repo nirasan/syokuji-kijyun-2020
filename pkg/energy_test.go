@@ -1,6 +1,10 @@
 package pkg
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/stretchr/testify/assert"
+)
 
 func TestEnergy_Get(t *testing.T) {
 	samples := []struct {
@@ -30,19 +34,18 @@ func TestEnergy_Get(t *testing.T) {
 			Valid:         false,
 		},
 	}
-	for _, s := range samples {
+	for i, s := range samples {
 		e := NewEnergy(s.Gender, s.Age, s.ActivityLevel)
+		t.Logf("[%d]%+v::: %+v", i, s, *e.datum)
 		v, ok := e.Get()
-		if ok != s.Valid || v != s.Expect {
-			t.Errorf("invalid result. value:%v, ok:%v, sample:%v", v, ok, s)
-		}
+		assert.Equal(t, s.Valid, ok)
+		assert.Equal(t, s.Expect, v)
 	}
 }
 
-func TestEnergy_GetForPregnantWoman(t *testing.T) {
-	e := NewEnergy(GenderFemale, Age30To49Years, ActivityLevelII)
-	v, ok := e.GetForPregnantWoman(TermEarly)
-	if ok != true || v != 2100 {
-		t.Errorf("invalid result. v:%v, ok:%v", v, ok)
-	}
+func TestNewEnergyForPregnantWoman(t *testing.T) {
+	e := NewEnergyForPregnantWoman(GenderFemale, Age30To49Years, ActivityLevelII, TermEarly)
+	v, ok := e.Get()
+	assert.Equal(t, true, ok)
+	assert.Equal(t, 2100.0, v)
 }
