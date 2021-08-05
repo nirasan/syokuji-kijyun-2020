@@ -14,11 +14,11 @@ func NewEnergy(gender, age, activityLevel int) *Energy {
 	}
 }
 
-// Get はエネルギーの必要量を返す
+// Get はエネルギーの必要量（kcal）を返す
 func (e *Energy) Get() (float64, bool) {
 	for _, d := range e.Data() {
 		if d.Gender == e.gender && d.Age == e.age && d.ActivityLevel == e.activityLevel {
-			return d.Value, d.Valid
+			return d.Value.Value, d.Value.Valid
 		}
 	}
 	return 0, false
@@ -54,6 +54,5 @@ type EnergyDatum struct {
 	Gender        int
 	Age           int
 	ActivityLevel int
-	Value         float64
-	Valid         bool
+	Value         NullFloat64
 }

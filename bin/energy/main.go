@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"strconv"
 	"strings"
 
 	"github.com/nirasan/syokuji-kijyun-2020/pkg"
@@ -33,18 +32,12 @@ func main() {
 			activityLevel := k % 3
 
 			s := strings.ReplaceAll(cols[j], ",", "")
-			valid := false
-			v, err := strconv.ParseFloat(s, 64)
-			if err == nil {
-				valid = true
-			}
 
 			datum := pkg.EnergyDatum{
 				Gender:        gender,
 				Age:           age,
 				ActivityLevel: activityLevel,
-				Value:         v,
-				Valid:         valid,
+				Value:         pkg.NullFloat64FromString(s),
 			}
 			data = append(data, datum)
 		}
@@ -58,6 +51,7 @@ func main() {
 	for _, d := range data {
 		s := fmt.Sprintf("%#v,\n", d)
 		s = strings.ReplaceAll(s, "pkg.EnergyDatum", "EnergyDatum")
+		s = strings.ReplaceAll(s, "pkg.NullFloat64", "NullFloat64")
 		g.MustWrite(s)
 	}
 	g.MustWrite("    }\n")
