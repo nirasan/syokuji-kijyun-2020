@@ -22,15 +22,15 @@ func main() {
 	}
 
 	lines := strings.Split(src, "\n")
-	for i := 3; i <= 14; i++ {
+	for i := 4; i <= 14; i++ {
 		cols := strings.Split(lines[i], " ")
 		fmt.Printf("cols:%+v, len:%d", cols, len(cols))
 		if len(cols) < 4 {
 			continue
 		}
 		j := len(cols) - 4
-		s1 := newSaturatedFattyAcids(pkg.GenderMale, i+1, cols[j:j+2])
-		s2 := newSaturatedFattyAcids(pkg.GenderFemale, i+1, cols[j+2:j+4])
+		s1 := newSaturatedFattyAcids(pkg.GenderMale, i, cols[j:j+2])
+		s2 := newSaturatedFattyAcids(pkg.GenderFemale, i, cols[j+2:j+4])
 		data = append(data, s1, s2)
 	}
 
@@ -71,8 +71,10 @@ func newSaturatedFattyAcids(gender, age int, cols []string) pkg.SaturatedFattyAc
 }
 
 // PDF 157 ページの「飽和脂肪酸の食事摂取基準」のコピペ
+// 元本では「0歳6〜8ヶ月」と「0歳9〜11ヶ月」が結合されているので修正している
 const src = `0 ～ 5 （月） ─ ─
-6 ～11（月） ─ ─
+6 ～8（月） ─ ─
+9 ～11（月） ─ ─
 1 ～ 2 （歳） ─ ─
 3 ～ 5 （歳） 10 以下 10 以下
 6 ～ 7 （歳） 10 以下 10 以下

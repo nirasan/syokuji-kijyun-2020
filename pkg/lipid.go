@@ -66,7 +66,7 @@ func (l *Lipid) GetDG() (float64, float64, bool) {
 	}
 	min, max := d.DGMin, d.DGMax
 	if min.Valid && max.Valid {
-		return min.Value, max.Value, false
+		return min.Value, max.Value, true
 	}
 	return 0, 0, false
 }

@@ -7,8 +7,8 @@ func (l *Lipid) Data() []LipidDatum {
 		LipidDatum{Gender: 1, Age: 0, AI: NullFloat64{Value: 50, Valid: true}, DGMax: NullFloat64{Value: 0, Valid: false}, DGMin: NullFloat64{Value: 0, Valid: false}},
 		LipidDatum{Gender: 0, Age: 1, AI: NullFloat64{Value: 40, Valid: true}, DGMax: NullFloat64{Value: 0, Valid: false}, DGMin: NullFloat64{Value: 0, Valid: false}},
 		LipidDatum{Gender: 1, Age: 1, AI: NullFloat64{Value: 40, Valid: true}, DGMax: NullFloat64{Value: 0, Valid: false}, DGMin: NullFloat64{Value: 0, Valid: false}},
-		LipidDatum{Gender: 0, Age: 2, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
-		LipidDatum{Gender: 1, Age: 2, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
+		LipidDatum{Gender: 0, Age: 2, AI: NullFloat64{Value: 40, Valid: true}, DGMax: NullFloat64{Value: 0, Valid: false}, DGMin: NullFloat64{Value: 0, Valid: false}},
+		LipidDatum{Gender: 1, Age: 2, AI: NullFloat64{Value: 40, Valid: true}, DGMax: NullFloat64{Value: 0, Valid: false}, DGMin: NullFloat64{Value: 0, Valid: false}},
 		LipidDatum{Gender: 0, Age: 3, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
 		LipidDatum{Gender: 1, Age: 3, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
 		LipidDatum{Gender: 0, Age: 4, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
@@ -31,5 +31,7 @@ func (l *Lipid) Data() []LipidDatum {
 		LipidDatum{Gender: 1, Age: 12, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
 		LipidDatum{Gender: 0, Age: 13, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
 		LipidDatum{Gender: 1, Age: 13, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
+		LipidDatum{Gender: 0, Age: 14, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
+		LipidDatum{Gender: 1, Age: 14, AI: NullFloat64{Value: 0, Valid: false}, DGMax: NullFloat64{Value: 30, Valid: true}, DGMin: NullFloat64{Value: 20, Valid: true}},
 	}
 }
