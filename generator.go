@@ -9,3 +9,6 @@ package main
 //go:generate go run bin/carbohydrates/main.go -- pkg pkg/carbohydrates_gen.go
 //go:generate go run bin/dietary_fiber/main.go -- pkg pkg/dietary_fiber_gen.go
 //go:generate go run bin/vitamin_a/main.go -- pkg pkg/vitamin_a_gen.go
+//go:generate go run bin/vitamin_d/main.go -- pkg pkg/vitamin_d_gen.go
+//go:generate go run bin/vitamin_e/main.go -- pkg pkg/vitamin_e_gen.go
+//go:generate go run bin/vitamin_k/main.go -- pkg pkg/vitamin_k_gen.go
