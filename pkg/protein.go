@@ -16,7 +16,7 @@ func NewProtein(gender, age int) *Protein {
 	return p
 }
 
-// NewProtein は Protein を返す
+// NewProtein は妊婦向けに値を修正した Protein を返す
 func NewProteinForPregnantWoman(gender, age, term int) *Protein {
 	p := NewProtein(gender, age)
 	if p.gender == GenderFemale {
@@ -41,7 +41,7 @@ func NewProteinForPregnantWoman(gender, age, term int) *Protein {
 	return p
 }
 
-// NewProtein は Protein を返す
+// NewProtein は授乳婦向けに値を修正した Protein を返す
 func NewProteinForLactatingWoman(gender, age int) *Protein {
 	p := NewProtein(gender, age)
 	if p.gender == GenderFemale {
