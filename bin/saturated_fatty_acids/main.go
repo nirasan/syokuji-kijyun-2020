@@ -56,7 +56,6 @@ func newNullSaturatedFattyAcids(gender, age int) pkg.SaturatedFattyAcidsDatum {
 		Gender: gender,
 		Age:    age,
 		DGMax:  pkg.NullFloat64{},
-		DGMin:  pkg.NullFloat64{},
 	}
 }
 
@@ -65,7 +64,6 @@ func newSaturatedFattyAcids(gender, age int, cols []string) pkg.SaturatedFattyAc
 		Gender: gender,
 		Age:    age,
 	}
-	s.DGMin = pkg.NullFloat64FromString("0")
 	s.DGMax = pkg.NullFloat64FromString(cols[0])
 	return s
 }

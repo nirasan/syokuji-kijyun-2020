@@ -20,7 +20,6 @@ func NewSaturatedFattyAcids(gender, age int) *SaturatedFattyAcids {
 func NewSaturatedFattyAcidsForPregnantWoman(gender, age int) *SaturatedFattyAcids {
 	s := NewSaturatedFattyAcids(gender, age)
 	if s.gender == GenderFemale {
-		s.datum.DGMin = NewNullFloat64(0)
 		s.datum.DGMax = NewNullFloat64(7)
 	}
 	return s
@@ -30,7 +29,6 @@ func NewSaturatedFattyAcidsForPregnantWoman(gender, age int) *SaturatedFattyAcid
 func NewSaturatedFattyAcidsForLactatingWoman(gender, age int) *SaturatedFattyAcids {
 	s := NewSaturatedFattyAcids(gender, age)
 	if s.gender == GenderFemale {
-		s.datum.DGMin = NewNullFloat64(0)
 		s.datum.DGMax = NewNullFloat64(7)
 	}
 	return s
@@ -46,19 +44,15 @@ func (s *SaturatedFattyAcids) GetDatum() *SaturatedFattyAcidsDatum {
 	return nil
 }
 
-// GetDG は目標量（%エネルギー）の上限と下限を返す
+// GetDG は目標量（%エネルギー）の上限を返す
 // DG とは tentative dietary goal for preventing life-style related diseases の略で、
 // 生活習慣病の発症予防のために現在の日本人が当面の目標とすべき摂取量
-func (s *SaturatedFattyAcids) GetDG() (float64, float64, bool) {
+func (s *SaturatedFattyAcids) GetDG() (float64, bool) {
 	d := s.datum
 	if d == nil {
-		return 0, 0, false
+		return 0, false
 	}
-	min, max := d.DGMin, d.DGMax
-	if min.Valid && max.Valid {
-		return min.Value, max.Value, true
-	}
-	return 0, 0, false
+	return d.DGMax.Flatten()
 }
 
 // PercentEnergyToGram は目安量と目標量の単位である（%エネルギー）を（g）に変換します
@@ -71,5 +65,4 @@ type SaturatedFattyAcidsDatum struct {
 	Gender int
 	Age    int
 	DGMax  NullFloat64 // 目標量 上限
-	DGMin  NullFloat64 // 目標量 下限
 }
