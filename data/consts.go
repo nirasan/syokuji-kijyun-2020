@@ -171,3 +171,92 @@ type VitaminK struct {
 	Option Option
 	AI     NilFloat // 目安量（μg）
 }
+
+type VitaminB1 struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+}
+
+type VitaminB2 struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+}
+
+type Niacin struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+	UL     NilFloat // 耐容上限量（mg）
+}
+
+type VitaminB6 struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+	UL     NilFloat // 耐容上限量（mg）
+}
+
+type VitaminB12 struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+}
+
+type FolicAcid struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
+}
+
+type PantothenicAcid struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（mg）
+}
+
+type Biotin struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（μg）
+}
+
+type VitaminC struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+}

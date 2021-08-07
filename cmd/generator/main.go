@@ -20,4 +20,13 @@ func main() {
 	VitaminD(dir + "/vitamin_d_gen.go")
 	VitaminE(dir + "/vitamin_e_gen.go")
 	VitaminK(dir + "/vitamin_k_gen.go")
+	VitaminB1(dir + "/vitamin_b1_gen.go")
+	VitaminB2(dir + "/vitamin_b2_gen.go")
+	Niacin(dir + "/niacin_gen.go")
+	VitaminB6(dir + "/vitamin_b6_gen.go")
+	VitaminB12(dir + "/vitamin_b12_gen.go")
+	FolicAcid(dir + "/folic_acid_gen.go")
+	PantothenicAcid(dir + "/pantothenic_acid_gen.go")
+	Biotin(dir + "/biotin_gen.go")
+	VitaminC(dir + "/vitamin_c_gen.go")
 }
