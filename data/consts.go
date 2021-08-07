@@ -55,5 +55,119 @@ type Energy struct {
 	To            Age
 	ActivityLevel ActivityLevel
 	Option        Option
-	Value         NilFloat
+	Value         NilFloat // kcal
+}
+
+type Protein struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat      // 推定平均必要量（g）
+	RDA    NilFloat      // 推奨量（g）
+	AI     NilFloat      // 目安量（g）
+	DG     NilFloatRange // 目標量（%エネルギー）
+}
+
+type NilFloatRange struct {
+	Min NilFloat // 下限
+	Max NilFloat // 上限
+}
+
+func ProteinKcalToGram(kcal float64) float64 {
+	return kcal / 4
+}
+
+type Lipid struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat      // 目安量（%エネルギー）
+	DG     NilFloatRange // 目標量（%エネルギー）
+}
+
+func LipidKcalToGram(kcal float64) float64 {
+	return kcal / 9
+}
+
+type SaturatedFattyAcids struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	DG     NilFloat // 目標量の上限（%エネルギー）
+}
+
+type Omega3FattyAcids struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（g）
+}
+
+type Omega6FattyAcids struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（g）
+}
+
+type Carbohydrates struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	DG     NilFloatRange // 目標量（%エネルギー）
+}
+
+func CarbohydratesKcalToGram(kcal float64) float64 {
+	return kcal / 4
+}
+
+type DietaryFiber struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	DG     NilFloat // 目標量の下限（g）
+}
+
+type VitaminA struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
+}
+
+type VitaminD struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
+}
+
+type VitaminE struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（mg）
+	UL     NilFloat // 耐容上限量（mg）
+}
+
+type VitaminK struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（μg）
 }
