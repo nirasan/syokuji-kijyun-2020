@@ -12,8 +12,7 @@ func VitaminB1(output string) {
 	lines := strings.Split(vitaminB1Src, "\n")
 	ages := [][]data.Age{
 		{{Month: 0}, {Month: 5}},
-		{{Month: 6}, {Month: 8}},
-		{{Month: 9}, {Month: 11}},
+		{{Month: 6}, {Month: 11}},
 		{{Year: 1}, {Year: 2}},
 		{{Year: 3}, {Year: 5}},
 		{{Year: 6}, {Year: 7}},

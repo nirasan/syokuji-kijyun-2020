@@ -24,10 +24,11 @@ type Option string
 
 const (
 	OptionNone           Option = ""
-	OptionEarlyPregnancy Option = "EarlyPregnancy"
-	OptionMidPregnancy   Option = "MidPregnancy"
-	OptionLatePregnancy  Option = "LatePregnancy"
-	OptionBreastfeeding  Option = "Breastfeeding"
+	OptionEarlyPregnancy Option = "EarlyPregnancy" // 妊娠初期
+	OptionMidPregnancy   Option = "MidPregnancy"   // 妊娠中期
+	OptionLatePregnancy  Option = "LatePregnancy"  // 妊娠後期
+	OptionBreastfeeding  Option = "Breastfeeding"  // 授乳中
+	OptionMenstruation   Option = "Menstruation"   // 月経時
 )
 
 type Age struct {
@@ -259,4 +260,88 @@ type VitaminC struct {
 	EAR    NilFloat // 推定平均必要量（mg）
 	RDA    NilFloat // 推奨量（mg）
 	AI     NilFloat // 目安量（mg）
+}
+
+type Sodium struct {
+	Gender  Gender
+	From    Age
+	To      Age
+	Option  Option
+	EAR     NilFloat // 推定平均必要量（mg）
+	EARSalt NilFloat // 推定平均必要量の食塩相当量（g）
+	AI      NilFloat // 目安量（mg）
+	AISalt  NilFloat // 目安量の食塩相当量（g）
+	DGSalt  NilFloat // 目標量の食塩相当量（g）
+}
+
+type Potassium struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（mg）
+	DG     NilFloat // 目標量の下限（mg）
+}
+
+type Calcium struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
+}
+
+type Magnesium struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+}
+
+type Phosphorus struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	AI     NilFloat // 目安量（mg）
+	UL     NilFloat // 耐容上限量（mg）
+}
+
+type Iron struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（mg）
+	RDA    NilFloat // 推奨量（mg）
+	AI     NilFloat // 目安量（mg）
+	UL     NilFloat // 耐容上限量（mg）
+}
+
+type Zinc struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
+}
+
+type Copper struct {
+	Gender Gender
+	From   Age
+	To     Age
+	Option Option
+	EAR    NilFloat // 推定平均必要量（μg）
+	RDA    NilFloat // 推奨量（μg）
+	AI     NilFloat // 目安量（μg）
+	UL     NilFloat // 耐容上限量（μg）
 }

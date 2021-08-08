@@ -29,4 +29,12 @@ func main() {
 	PantothenicAcid(dir + "/pantothenic_acid_gen.go")
 	Biotin(dir + "/biotin_gen.go")
 	VitaminC(dir + "/vitamin_c_gen.go")
+	Sodium(dir + "/sodium_gen.go")
+	Potassium(dir + "/potassium_gen.go")
+	Calcium(dir + "/calcium_gen.go")
+	Magnesium(dir + "/magnesium_gen.go")
+	Phosphorus(dir + "/phosphorus_gen.go")
+	Iron(dir + "/iron_gen.go")
+	Zinc(dir + "/zinc_gen.go")
+	Copper(dir + "/copper_gen.go")
 }
