@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Biotin は PDF 271 ページの「ビオチンの食事摂取基準」をパースして Go の構造体を作成します
 func Biotin(output string) {
 	lines := strings.Split(biotinSrc, "\n")
 	ages := [][]data.Age{
@@ -99,7 +100,7 @@ func newBiotinWithOption(in data.Biotin, o data.Option) data.Biotin {
 	return d
 }
 
-// PDF 271 ページの「ビオチンの食事摂取基準」のコピペ
+// PDF 271 ページの「ビオチンの食事摂取基準」
 const biotinSrc = `0 ～ 5 （月） 4 4
 6 ～11（月） 5 5
 1 ～ 2 （歳） 20 20

@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Iron は PDF 373 ページの「鉄の食事摂取基準」をパースして Go の構造体を作成します
 func Iron(output string) {
 	lines := strings.Split(ironSrc, "\n")
 	ages := [][]data.Age{
@@ -121,7 +122,6 @@ func newIronWithOption(in data.Iron, o data.Option) data.Iron {
 	return d
 }
 
-// PDF 373 ページの「鉄の食事摂取基準」
 const ironSrc = `0 ～ 5 	（月） ─ ─ 0.5 ─ ─ ─ ─ ─ 0.5 ─
 6 ～11（月） 3.5 5.0 ─ ─ 3.5 4.5 ─ ─ ─ ─
 1 ～ 2 	（歳） 3.0 4.5 ─ 25 3.0 4.5 ─ ─ ─ 20

@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// DietaryFiber は PDF 172 ページの「食物繊維の食事摂取基準」をパースして Go の構造体を作成します
 func DietaryFiber(output string) {
 	lines := strings.Split(dietaryFiberSrc, "\n")
 	ages := [][]data.Age{
@@ -97,7 +98,7 @@ func newDietaryFiberWithOption(in data.DietaryFiber, o data.Option) data.Dietary
 	return d
 }
 
-// PDF 172 ページの「食物繊維の食事摂取基準」のコピペ
+// PDF 172 ページの「食物繊維の食事摂取基準」
 const dietaryFiberSrc = `0 ～ 5 （月） ─ ─
 6 ～11（月） ─ ─
 1 ～ 2 （歳） ─ ─

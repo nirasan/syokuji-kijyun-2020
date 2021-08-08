@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Energy は PDF 91 ページの「推定エネルギー必要量」をパースして Go の構造体を作成します
 func Energy(output string) {
 	lines := strings.Split(energySrc, "\n")
 	ages := [][]data.Age{
@@ -96,7 +97,6 @@ func newEnergyWithOption(e data.Energy, o data.Option, f float64) data.Energy {
 	}
 }
 
-// PDF 91 ページの「推定エネルギー必要量」のコピペ
 const energySrc = `0 ～ 5 （月） ─ 550 ─ ─ 500 ─
 6 ～ 8 （月） ─ 650 ─ ─ 600 ─
 9 ～11（月） ─ 700 ─ ─ 650 ─

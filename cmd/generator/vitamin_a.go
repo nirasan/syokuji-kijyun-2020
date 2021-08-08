@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminA は 212 ページの「ビタミン A の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminA(output string) {
 	lines := strings.Split(vitaminASrc, "\n")
 	ages := [][]data.Age{
@@ -114,7 +115,6 @@ func newVitaminAWithOption(in data.VitaminA, o data.Option) data.VitaminA {
 	return d
 }
 
-// PDF 212 ページの「ビタミン A の食事摂取基準」のコピペ
 const vitaminASrc = `0 ～ 5 （月） ─ ─ 300 600 ─ ─ 300 600
 6 ～11（月） ─ ─ 400 600 ─ ─ 400 600
 1 ～ 2 （歳） 300 400 ─ 600 250 350 ─ 600

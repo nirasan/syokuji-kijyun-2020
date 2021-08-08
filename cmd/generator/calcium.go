@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Calcium は PDF 315 ページの「カルシウムの食事摂取基準」をパースして Go の構造体を作成します
 func Calcium(output string) {
 	lines := strings.Split(calciumSrc, "\n")
 	ages := [][]data.Age{
@@ -97,7 +98,7 @@ func newCalciumWithOption(in data.Calcium, o data.Option) data.Calcium {
 	return d
 }
 
-// PDF 315 ページの「カルシウムの食事摂取基準」のコピペ
+// PDF 315 ページの「カルシウムの食事摂取基準」
 const calciumSrc = `0 ～ 5 （月） ─ ─ 200 ─ ─ ─ 200 ─
 6 ～11（月） ─ ─ 250 ─ ─ ─ 250 ─
 1 ～ 2 （歳） 350 450 ─ ─ 350 400 ─ ─

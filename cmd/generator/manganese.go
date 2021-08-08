@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Manganese は PDF 376 ページの「マンガンの食事摂取基準」をパースして Go の構造体を作成します
 func Manganese(output string) {
 	lines := strings.Split(manganeseSrc, "\n")
 	ages := [][]data.Age{
@@ -103,7 +104,6 @@ func newManganeseWithOption(in data.Manganese, o data.Option) data.Manganese {
 	return d
 }
 
-// PDF 376 ページの「マンガンの食事摂取基準」
 const manganeseSrc = `0 ～ 5 	（月） 0.01 ─ 0.01 ─
 6 ～11（月） 0.5 ─ 0.5 ─
 1 ～ 2 	（歳） 1.5 ─ 1.5 ─

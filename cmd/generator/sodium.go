@@ -9,6 +9,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Sodium は PDF 313 ページの「ナトリウムの食事摂取基準」をパースして Go の構造体を作成します
 func Sodium(output string) {
 	lines := strings.Split(sodiumSrc, "\n")
 	ages := [][]data.Age{
@@ -132,7 +133,6 @@ func newSodiumWithOption(in data.Sodium, o data.Option) data.Sodium {
 	return d
 }
 
-// PDF 313 ページの「ナトリウムの食事摂取基準」のコピペ
 const sodiumSrc = `0 ～ 5 （月） ─ 100（0.3） ─ ─ 100（0.3） ─
 6 ～11（月） ─ 600（1.5） ─ ─ 600（1.5） ─
 1 ～ 2 （歳） ─ ─ （3.0 未満） ─ ─ （3.0 未満）

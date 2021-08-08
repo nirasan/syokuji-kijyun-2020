@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Copper はPDF 375 ページの「銅の食事摂取基準」をパースして Go の構造体を作成します
 func Copper(output string) {
 	lines := strings.Split(copperSrc, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newCopperWithOption(in data.Copper, o data.Option) data.Copper {
 	return d
 }
 
-// PDF 374 ページの「銅の食事摂取基準」
 const copperSrc = `0 ～ 5 	（月） － － 0.3 － － － 0.3 －
 6 ～11（月） － － 0.3 － － － 0.3 －
 1 ～ 2 	（歳） 0.3 0.3 － － 0.2 0.3 － －

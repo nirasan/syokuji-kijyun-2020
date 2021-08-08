@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Protein は PDF 133 ページの「たんぱく質の食事摂取基準」をパースして Go の構造体を作成します
 func Protein(output string) {
 	lines := strings.Split(proteinSrc, "\n")
 	ages := [][]data.Age{
@@ -136,7 +137,6 @@ func newProteinWithOption(in data.Protein, o data.Option) data.Protein {
 	return d
 }
 
-// PDF 133 ページの「たんぱく質の食事摂取基準」のコピペ
 const proteinSrc = `0 ～ 5 （月） ─ ─ 10 ─ ─ ─ 10 ─
 6 ～ 8 （月） ─ ─ 15 ─ ─ ─ 15 ─
 9 ～11（月） ─ ─ 25 ─ ─ ─ 25 ─

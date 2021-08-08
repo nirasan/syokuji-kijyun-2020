@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// FolicAcid は PDF 269 ページの「葉酸の食事摂取基準」をパースして Go の構造体を作成します
 func FolicAcid(output string) {
 	lines := strings.Split(folicAcidSrc, "\n")
 	ages := [][]data.Age{
@@ -112,7 +113,6 @@ func newFolicAcidWithOption(in data.FolicAcid, o data.Option) data.FolicAcid {
 	return d
 }
 
-// PDF 269 ページの「葉酸の食事摂取基準」のコピペ
 const folicAcidSrc = `0 ～ 5 （月） ─ ─ 40 ─ ─ ─ 40 ─
 6 ～11（月） ─ ─ 60 ─ ─ ─ 60 ─
 1 ～ 2 （歳） 80 90 ─ 200 90 90 ─ 200

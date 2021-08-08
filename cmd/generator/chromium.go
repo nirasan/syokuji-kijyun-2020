@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Chromium は PDF 379 ページの「クロムの食事摂取基準」をパースして Go の構造体を作成します
 func Chromium(output string) {
 	lines := strings.Split(chromiumSrc, "\n")
 	ages := [][]data.Age{
@@ -101,7 +102,7 @@ func newChromiumWithOption(in data.Chromium, o data.Option) data.Chromium {
 	return d
 }
 
-// PDF 379 ページの「クロムの食事摂取基準」のコピペ
+// PDF 379 ページの「クロムの食事摂取基準」
 const chromiumSrc = `0 ～ 5 	（月） 0.8 ─ 0.8 ─
 6 ～11（月） 1.0 ─ 1.0 ─
 1 ～ 2 	（歳） ─ ─ ─ ─

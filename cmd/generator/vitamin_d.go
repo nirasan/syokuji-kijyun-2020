@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminD は 213 ページの「ビタミン D の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminD(output string) {
 	lines := strings.Split(vitaminDSrc, "\n")
 	ages := [][]data.Age{
@@ -101,7 +102,6 @@ func newVitaminDWithOption(in data.VitaminD, o data.Option) data.VitaminD {
 	return d
 }
 
-// PDF 213 ページの「ビタミン D の食事摂取基準」のコピペ
 const vitaminDSrc = `0 ～ 5 （月） 5.0 25 5.0 25
 6 ～11（月） 5.0 25 5.0 25
 1 ～ 2 （歳） 3.0 20 3.5 20

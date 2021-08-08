@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// PantothenicAcid は PDF 270 ページの「パントテン酸の食事摂取基準」をパースして Go の構造体を作成します
 func PantothenicAcid(output string) {
 	lines := strings.Split(pantothenicAcidSrc, "\n")
 	ages := [][]data.Age{
@@ -101,7 +102,6 @@ func newPantothenicAcidWithOption(in data.PantothenicAcid, o data.Option) data.P
 	return d
 }
 
-// PDF 270 ページの「パントテン酸の食事摂取基準」のコピペ
 const pantothenicAcidSrc = `0 ～ 5 （月） 4 4
 6 ～11（月） 5 5
 1 ～ 2 （歳） 3 4

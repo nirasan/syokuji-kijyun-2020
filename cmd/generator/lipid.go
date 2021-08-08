@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Lipid は PDF 156 ページの「脂質の食事摂取基準」をパースして Go の構造体を作成します
 func Lipid(output string) {
 	lines := strings.Split(lipidSrc, "\n")
 	ages := [][]data.Age{
@@ -108,7 +109,6 @@ func newLipidWithOption(in data.Lipid, o data.Option) data.Lipid {
 	return d
 }
 
-// PDF 156 ページの「脂質の食事摂取基準」のコピペ
 const lipidSrc = `0 ～ 5 （月） 50 ─ 50 ─
 6 ～11（月） 40 ─ 40 ─
 1 ～ 2 （歳） ─ 20～30 ─ 20～30

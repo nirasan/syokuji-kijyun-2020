@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminB6 は 267 ページの「ビタミン B6 の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminB6(output string) {
 	lines := strings.Split(vitaminB6Src, "\n")
 	ages := [][]data.Age{
@@ -112,7 +113,6 @@ func newVitaminB6WithOption(in data.VitaminB6, o data.Option) data.VitaminB6 {
 	return d
 }
 
-// PDF 267 ページの「ビタミン B6 の食事摂取基準」のコピペ
 const vitaminB6Src = `0 ～ 5 （月） ─ ─ 0.2 ─ ─ ─ 0.2 ─
 6 ～11（月） ─ ─ 0.3 ─ ─ ─ 0.3 ─
 1 ～ 2 （歳） 0.4 0.5 ─ 10 0.4 0.5 ─ 10

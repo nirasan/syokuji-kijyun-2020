@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminB1 は 264 ページの「ビタミン B1 の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminB1(output string) {
 	lines := strings.Split(vitaminB1Src, "\n")
 	ages := [][]data.Age{
@@ -108,7 +109,6 @@ func newVitaminB1WithOption(in data.VitaminB1, o data.Option) data.VitaminB1 {
 	return d
 }
 
-// PDF 264 ページの「ビタミン B1 の食事摂取基準」のコピペ
 const vitaminB1Src = `0 ～ 5 （月） ─ ─ 0.1 ─ ─ 0.1
 6 ～11（月） ─ ─ 0.2 ─ ─ 0.2
 1 ～ 2 （歳） 0.4 0.5 ─ 0.4 0.5 ─

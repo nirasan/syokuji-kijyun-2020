@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Magnesium は PDF 316 ページの「カルシウムの食事摂取基準」をパースして Go の構造体を作成します
 func Magnesium(output string) {
 	lines := strings.Split(magnesiumSrc, "\n")
 	ages := [][]data.Age{
@@ -108,7 +109,6 @@ func newMagnesiumWithOption(in data.Magnesium, o data.Option) data.Magnesium {
 	return d
 }
 
-// PDF 316 ページの「カルシウムの食事摂取基準」のコピペ
 const magnesiumSrc = `0 ～ 5 （月） ─ ─ 20 ─ ─ ─ 20 ─
 6 ～11（月） ─ ─ 60 ─ ─ ─ 60 ─
 1 ～ 2 （歳） 60 70 ─ ─ 60 70 ─ ─

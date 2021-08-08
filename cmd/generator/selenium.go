@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Selenium は PDF 378 ページの「セレンの食事摂取基準」をパースして Go の構造体を作成します
 func Selenium(output string) {
 	lines := strings.Split(seleniumSrc, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newSeleniumWithOption(in data.Selenium, o data.Option) data.Selenium {
 	return d
 }
 
-// PDF 378 ページの「セレンの食事摂取基準」のコピペ
 const seleniumSrc = `0 ～ 5 	（月） ─ ─ 15 ─ ─ ─ 15 ─
 6 ～11（月） ─ ─ 15 ─ ─ ─ 15 ─
 1 ～ 2 	（歳） 10 10 ─ 100 10 10 ─ 100

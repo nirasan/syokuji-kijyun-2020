@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminC は 272 ページの「ビタミン C の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminC(output string) {
 	lines := strings.Split(vitaminCSrc, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newVitaminCWithOption(in data.VitaminC, o data.Option) data.VitaminC {
 	return d
 }
 
-// PDF 272 ページの「ビタミン C の食事摂取基準」のコピペ
 const vitaminCSrc = `0 ～ 5 （月） ─ ─ 40 ─ ─ 40
 6 ～11（月） ─ ─ 40 ─ ─ 40
 1 ～ 2 （歳） 35 40 ─ 35 40 ─

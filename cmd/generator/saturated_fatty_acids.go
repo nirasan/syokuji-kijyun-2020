@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// SaturatedFattyAcids は PDF 157 ページの「飽和脂肪酸の食事摂取基準」をパースして Go の構造体を作成します
 func SaturatedFattyAcids(output string) {
 	lines := strings.Split(saturatedFattyAcidsSrc, "\n")
 	ages := [][]data.Age{
@@ -97,7 +98,6 @@ func newSaturatedFattyAcidsWithOption(in data.SaturatedFattyAcids, o data.Option
 	return d
 }
 
-// PDF 157 ページの「飽和脂肪酸の食事摂取基準」のコピペ
 const saturatedFattyAcidsSrc = `0 ～ 5 （月） ─ ─
 6 ～11（月） ─ ─
 1 ～ 2 （歳） ─ ─

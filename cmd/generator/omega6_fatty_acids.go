@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Omega6FattyAcids は PDF 158 ページの「n─6 系脂肪酸の食事摂取基準」をパースして Go の構造体を作成します
 func Omega6FattyAcids(output string) {
 	lines := strings.Split(omega6FattyAcidsSrc, "\n")
 	ages := [][]data.Age{

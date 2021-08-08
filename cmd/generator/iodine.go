@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Iodine は PDF 377 ページの「ヨウ素の食事摂取基準」をパースして Go の構造体を作成します
 func Iodine(output string) {
 	lines := strings.Split(iodineSrc, "\n")
 	ages := [][]data.Age{
@@ -113,7 +114,6 @@ func newIodineWithOption(in data.Iodine, o data.Option) data.Iodine {
 	return d
 }
 
-// PDF 377 ページの「ヨウ素の食事摂取基準」のコピペ
 const iodineSrc = `0 ～ 5 	（月） ─ ─ 100 250 ─ ─ 100 250
 6 ～11（月） ─ ─ 130 250 ─ ─ 130 250
 1 ～ 2 	（歳） 35 50 ─ 300 35 50 ─ 300

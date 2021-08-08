@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminB2 は 265 ページの「ビタミン B2 の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminB2(output string) {
 	lines := strings.Split(vitaminB2Src, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newVitaminB2WithOption(in data.VitaminB2, o data.Option) data.VitaminB2 {
 	return d
 }
 
-// PDF 265 ページの「ビタミン B2 の食事摂取基準」のコピペ
 const vitaminB2Src = `0 ～ 5 （月） ─ ─ 0.3 ─ ─ 0.3
 6 ～11（月） ─ ─ 0.4 ─ ─ 0.4
 1 ～ 2 （歳） 0.5 0.6 ─ 0.5 0.5 ─

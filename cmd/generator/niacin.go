@@ -9,6 +9,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Niacin は PDF 266 ページの「ナイアシンの食事摂取基準」をパースして Go の構造体を作成します
 func Niacin(output string) {
 	lines := strings.Split(niacinSrc, "\n")
 	ages := [][]data.Age{
@@ -115,7 +116,6 @@ func newNiacinWithOption(in data.Niacin, o data.Option) data.Niacin {
 	return d
 }
 
-// PDF 266 ページの「ナイアシンの食事摂取基準」のコピペ
 const niacinSrc = `0 ～ 5 （月）4 ─ ─ 2 ─ ─ ─ 2 ─
 6 ～11（月） ─ ─ 3 ─ ─ ─ 3 ─
 1 ～ 2 （歳） 5 6 ─ 60（15） 4 5 ─ 60（15）

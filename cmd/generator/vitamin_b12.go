@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminB12 は 268 ページの「ビタミン B12 の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminB12(output string) {
 	lines := strings.Split(vitaminB12Src, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newVitaminB12WithOption(in data.VitaminB12, o data.Option) data.VitaminB12 
 	return d
 }
 
-// PDF 268 ページの「ビタミン B12 の食事摂取基準」のコピペ
 const vitaminB12Src = `0 ～ 5 （月） ─ ─ 0.4 ─ ─ 0.4
 6 ～11（月） ─ ─ 0.5 ─ ─ 0.5
 1 ～ 2 （歳） 0.8 0.9 ─ 0.8 0.9 ─

@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminE は 214 ページの「ビタミン E の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminE(output string) {
 	lines := strings.Split(vitaminESrc, "\n")
 	ages := [][]data.Age{
@@ -103,7 +104,6 @@ func newVitaminEWithOption(in data.VitaminE, o data.Option) data.VitaminE {
 	return d
 }
 
-// PDF 214 ページの「ビタミン E の食事摂取基準」のコピペ
 const vitaminESrc = `0 ～ 5 （月） 3.0 ─ 3.0 ─
 6 ～11（月） 4.0 ─ 4.0 ─
 1 ～ 2 （歳） 3.0 150 3.0 150

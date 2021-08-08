@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// VitaminK は 215 ページの「ビタミン K の食事摂取基準」をパースして Go の構造体を作成します
 func VitaminK(output string) {
 	lines := strings.Split(vitaminKSrc, "\n")
 	ages := [][]data.Age{
@@ -99,7 +100,6 @@ func newVitaminKWithOption(in data.VitaminK, o data.Option) data.VitaminK {
 	return d
 }
 
-// PDF 215 ページの「ビタミン K の食事摂取基準」のコピペ
 const vitaminKSrc = `0 ～ 5 （月） 4 4
 6 ～11（月） 7 7
 1 ～ 2 （歳） 50 60

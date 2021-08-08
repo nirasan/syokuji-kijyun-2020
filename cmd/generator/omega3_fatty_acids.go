@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Omega3FattyAcids は PDF 158 ページの「n─3 系脂肪酸の食事摂取基準」をパースして Go の構造体を作成します
 func Omega3FattyAcids(output string) {
 	lines := strings.Split(omega3FattyAcidsSrc, "\n")
 	ages := [][]data.Age{
@@ -96,7 +97,6 @@ func newOmega3FattyAcidsWithOption(in data.Omega3FattyAcids, o data.Option) data
 	return d
 }
 
-// PDF 158 ページの「n─3 系脂肪酸の食事摂取基準」のコピペ
 const omega3FattyAcidsSrc = `0 ～ 5 （月） 0.9 0.9
 6 ～11（月） 0.8 0.8
 1 ～ 2 （歳） 0.7 0.8

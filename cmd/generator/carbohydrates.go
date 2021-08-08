@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Carbohydrates は PDF 171 ページの「炭水化物の食事摂取基準」をパースして Go の構造体を作成します
 func Carbohydrates(output string) {
 	lines := strings.Split(carbohydratesSrc, "\n")
 	ages := [][]data.Age{
@@ -106,7 +107,7 @@ func newCarbohydratesWithOption(in data.Carbohydrates, o data.Option) data.Carbo
 	return d
 }
 
-// PDF 171 ページの「炭水化物の食事摂取基準」のコピペ
+// PDF 171 ページの「炭水化物の食事摂取基準」
 const carbohydratesSrc = `0 ～ 5 （月） ─ ─
 6 ～11（月） ─ ─
 1 ～ 2 （歳） 50～65 50～65

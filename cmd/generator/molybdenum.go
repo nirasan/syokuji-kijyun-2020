@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Molybdenum は PDF 380 ページの「モリブデンの食事摂取基準」をパースして Go の構造体を作成します
 func Molybdenum(output string) {
 	lines := strings.Split(molybdenumSrc, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newMolybdenumWithOption(in data.Molybdenum, o data.Option) data.Molybdenum 
 	return d
 }
 
-// PDF 378 ページの「モリブデンの食事摂取基準」のコピペ
 const molybdenumSrc = `0 ～ 5 	（月） ─ ─ 2 ─ ─ ─ 2 ─
 6 ～11（月） ─ ─ 5 ─ ─ ─ 5 ─
 1 ～ 2 	（歳） 10 10 ─ ─ 10 10 ─ ─

@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Zinc は 374 ページの「亜鉛の食事摂取基準」をパースして Go の構造体を作成します
 func Zinc(output string) {
 	lines := strings.Split(zincSrc, "\n")
 	ages := [][]data.Age{
@@ -110,7 +111,6 @@ func newZincWithOption(in data.Zinc, o data.Option) data.Zinc {
 	return d
 }
 
-// PDF 374 ページの「亜鉛の食事摂取基準」
 const zincSrc = `0 ～ 5 	（月） ─ ─ 2 ─ ─ ─ 2 ─
 6 ～11（月） ─ ─ 3 ─ ─ ─ 3 ─
 1 ～ 2 	（歳） 3 3 ─ ─ 2 3 ─ ─

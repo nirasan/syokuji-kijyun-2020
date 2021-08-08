@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Potassium は PDF 314 ページの「カリウムの食事摂取基準」をパースして Go の構造体を作成します
 func Potassium(output string) {
 	lines := strings.Split(potassiumSrc, "\n")
 	ages := [][]data.Age{
@@ -108,7 +109,6 @@ func newPotassiumWithOption(in data.Potassium, o data.Option) data.Potassium {
 	return d
 }
 
-// PDF 314 ページの「カリウムの食事摂取基準」のコピペ
 const potassiumSrc = `0 ～ 5 （月） 400 ─ 400 ─
 6 ～11（月） 700 ─ 700 ─
 1 ～ 2 （歳） 900 ─ 900 ─

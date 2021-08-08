@@ -63,7 +63,7 @@ func NilFloatFromString(s string) NilFloat {
 	return NilFloat{Float: v, Valid: true}
 }
 
-// Energy エネルギー
+// Energy エネルギー P.91
 type Energy struct {
 	Gender        Gender
 	From          Age
@@ -73,7 +73,7 @@ type Energy struct {
 	Value         NilFloat // kcal
 }
 
-// Protein タンパク質
+// Protein タンパク質 P.133
 type Protein struct {
 	Gender Gender
 	From   Age
@@ -98,7 +98,7 @@ func ProteinKcalToGram(kcal float64) float64 {
 	return kcal / 4
 }
 
-// Lipid 脂質
+// Lipid 脂質 P.156
 type Lipid struct {
 	Gender Gender
 	From   Age
@@ -112,7 +112,7 @@ func LipidKcalToGram(kcal float64) float64 {
 	return kcal / 9
 }
 
-// SaturatedFattyAcids 飽和脂肪酸
+// SaturatedFattyAcids 飽和脂肪酸 P.157
 type SaturatedFattyAcids struct {
 	Gender Gender
 	From   Age
@@ -121,7 +121,7 @@ type SaturatedFattyAcids struct {
 	DG     NilFloat // 目標量の上限（%エネルギー）
 }
 
-// Omega3FattyAcids オメガ3系脂肪酸
+// Omega3FattyAcids オメガ3系脂肪酸 P.158
 type Omega3FattyAcids struct {
 	Gender Gender
 	From   Age
@@ -130,7 +130,7 @@ type Omega3FattyAcids struct {
 	AI     NilFloat // 目安量（g）
 }
 
-// Omega6FattyAcids オメガ6系脂肪酸
+// Omega6FattyAcids オメガ6系脂肪酸 P.158
 type Omega6FattyAcids struct {
 	Gender Gender
 	From   Age
@@ -139,7 +139,7 @@ type Omega6FattyAcids struct {
 	AI     NilFloat // 目安量（g）
 }
 
-// Carbohydrates 炭水化物
+// Carbohydrates 炭水化物 P.171
 type Carbohydrates struct {
 	Gender Gender
 	From   Age
@@ -152,7 +152,7 @@ func CarbohydratesKcalToGram(kcal float64) float64 {
 	return kcal / 4
 }
 
-// DietaryFiber 食物繊維
+// DietaryFiber 食物繊維 P.172
 type DietaryFiber struct {
 	Gender Gender
 	From   Age
@@ -161,7 +161,7 @@ type DietaryFiber struct {
 	DG     NilFloat // 目標量の下限（g）
 }
 
-// VitaminA ビタミンA
+// VitaminA ビタミンA P.212
 type VitaminA struct {
 	Gender Gender
 	From   Age
@@ -173,7 +173,7 @@ type VitaminA struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// VitaminD ビタミンD
+// VitaminD ビタミンD P.213
 type VitaminD struct {
 	Gender Gender
 	From   Age
@@ -183,7 +183,7 @@ type VitaminD struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// VitaminE ビタミンE
+// VitaminE ビタミンE P.214
 type VitaminE struct {
 	Gender Gender
 	From   Age
@@ -193,7 +193,7 @@ type VitaminE struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// VitaminK ビタミンK
+// VitaminK ビタミンK P.215
 type VitaminK struct {
 	Gender Gender
 	From   Age
@@ -202,7 +202,7 @@ type VitaminK struct {
 	AI     NilFloat // 目安量（μg）
 }
 
-// VitaminB1 ビタミンB1
+// VitaminB1 ビタミンB1 P.264
 type VitaminB1 struct {
 	Gender Gender
 	From   Age
@@ -213,7 +213,7 @@ type VitaminB1 struct {
 	AI     NilFloat // 目安量（mg）
 }
 
-// VitaminB2 ビタミンB2
+// VitaminB2 ビタミンB2 P.265
 type VitaminB2 struct {
 	Gender Gender
 	From   Age
@@ -224,7 +224,7 @@ type VitaminB2 struct {
 	AI     NilFloat // 目安量（mg）
 }
 
-// Niacin ナイアシン
+// Niacin ナイアシン P.266
 type Niacin struct {
 	Gender Gender
 	From   Age
@@ -236,7 +236,7 @@ type Niacin struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// VitaminB6 ビタミンB6
+// VitaminB6 ビタミンB6 P.267
 type VitaminB6 struct {
 	Gender Gender
 	From   Age
@@ -248,7 +248,7 @@ type VitaminB6 struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// VitaminB12 ビタミンB12
+// VitaminB12 ビタミンB12 P.268
 type VitaminB12 struct {
 	Gender Gender
 	From   Age
@@ -259,7 +259,7 @@ type VitaminB12 struct {
 	AI     NilFloat // 目安量（μg）
 }
 
-// FolicAcid 葉酸
+// FolicAcid 葉酸 P.269
 type FolicAcid struct {
 	Gender Gender
 	From   Age
@@ -271,7 +271,7 @@ type FolicAcid struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// PantothenicAcid パントテン酸
+// PantothenicAcid パントテン酸 P.270
 type PantothenicAcid struct {
 	Gender Gender
 	From   Age
@@ -280,7 +280,7 @@ type PantothenicAcid struct {
 	AI     NilFloat // 目安量（mg）
 }
 
-// Biotin ビオチン
+// Biotin ビオチン P.271
 type Biotin struct {
 	Gender Gender
 	From   Age
@@ -289,7 +289,7 @@ type Biotin struct {
 	AI     NilFloat // 目安量（μg）
 }
 
-// VitaminC ビタミンC
+// VitaminC ビタミンC P.272
 type VitaminC struct {
 	Gender Gender
 	From   Age
@@ -300,7 +300,7 @@ type VitaminC struct {
 	AI     NilFloat // 目安量（mg）
 }
 
-// Sodium ナトリウム
+// Sodium ナトリウム P.313
 type Sodium struct {
 	Gender  Gender
 	From    Age
@@ -313,7 +313,7 @@ type Sodium struct {
 	DGSalt  NilFloat // 目標量の食塩相当量（g）
 }
 
-// Potassium カリウム
+// Potassium カリウム P.314
 type Potassium struct {
 	Gender Gender
 	From   Age
@@ -323,7 +323,7 @@ type Potassium struct {
 	DG     NilFloat // 目標量の下限（mg）
 }
 
-// Calcium カルシウム
+// Calcium カルシウム P.315
 type Calcium struct {
 	Gender Gender
 	From   Age
@@ -335,7 +335,7 @@ type Calcium struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// Magnesium マグネシウム
+// Magnesium マグネシウム P.316
 type Magnesium struct {
 	Gender Gender
 	From   Age
@@ -346,7 +346,7 @@ type Magnesium struct {
 	AI     NilFloat // 目安量（mg）
 }
 
-// Phosphorus リン
+// Phosphorus リン P.317
 type Phosphorus struct {
 	Gender Gender
 	From   Age
@@ -356,7 +356,7 @@ type Phosphorus struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// Iron 鉄
+// Iron 鉄 P.373
 type Iron struct {
 	Gender Gender
 	From   Age
@@ -368,7 +368,7 @@ type Iron struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// Zinc 亜鉛
+// Zinc 亜鉛 P.374
 type Zinc struct {
 	Gender Gender
 	From   Age
@@ -380,7 +380,7 @@ type Zinc struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// Copper 銅
+// Copper 銅 P.375
 type Copper struct {
 	Gender Gender
 	From   Age
@@ -392,7 +392,7 @@ type Copper struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// Manganese マンガン
+// Manganese マンガン P.376
 type Manganese struct {
 	Gender Gender
 	From   Age
@@ -402,7 +402,7 @@ type Manganese struct {
 	UL     NilFloat // 耐容上限量（mg）
 }
 
-// Iodine ヨウ素
+// Iodine ヨウ素 P.377
 type Iodine struct {
 	Gender Gender
 	From   Age
@@ -414,7 +414,7 @@ type Iodine struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// Selenium セレン
+// Selenium セレン P.378
 type Selenium struct {
 	Gender Gender
 	From   Age
@@ -426,7 +426,7 @@ type Selenium struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// Chromium クロム
+// Chromium クロム P.379
 type Chromium struct {
 	Gender Gender
 	From   Age
@@ -436,7 +436,7 @@ type Chromium struct {
 	UL     NilFloat // 耐容上限量（μg）
 }
 
-// Molybdenum モリブデン
+// Molybdenum モリブデン P.380
 type Molybdenum struct {
 	Gender Gender
 	From   Age

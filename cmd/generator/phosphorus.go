@@ -8,6 +8,7 @@ import (
 	"github.com/nirasan/syokuji-kijyun-2020/tools"
 )
 
+// Phosphorus は PDF 317 ページの「リンの食事摂取基準」をパースして Go の構造体を作成します
 func Phosphorus(output string) {
 	lines := strings.Split(phosphorusSrc, "\n")
 	ages := [][]data.Age{
@@ -97,7 +98,6 @@ func newPhosphorusWithOption(in data.Phosphorus, o data.Option) data.Phosphorus 
 	return d
 }
 
-// PDF 317 ページの「リンの食事摂取基準」のコピペ
 const phosphorusSrc = `0 ～ 5 （月） 120 ─ 120 ─
 6 ～11（月） 260 ─ 260 ─
 1 ～ 2 （歳） 500 ─ 500 ─
