@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestEnergyList(t *testing.T) {
-	list := EnergyList()
+func TestIronList(t *testing.T) {
+	list := IronList()
 	t.Logf("---- 男性")
 	for _, d := range list {
 		if d.Gender == GenderMale {
@@ -15,6 +15,12 @@ func TestEnergyList(t *testing.T) {
 	t.Logf("---- 女性")
 	for _, d := range list {
 		if d.Gender == GenderFemale && d.Option == OptionNone {
+			t.Log(d)
+		}
+	}
+	t.Logf("---- 女性（月経時）")
+	for _, d := range list {
+		if d.Gender == GenderFemale && d.Option == OptionMenstruation {
 			t.Log(d)
 		}
 	}

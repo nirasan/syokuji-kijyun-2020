@@ -1,6 +1,7 @@
 package data
 
 import (
+	"fmt"
 	"strconv"
 	"strings"
 )
@@ -8,8 +9,8 @@ import (
 type Gender string
 
 const (
-	GenderMale   Gender = "Male"
-	GenderFemale Gender = "Female"
+	GenderMale   Gender = "男性"
+	GenderFemale Gender = "女性"
 )
 
 type ActivityLevel string
@@ -24,11 +25,11 @@ type Option string
 
 const (
 	OptionNone           Option = ""
-	OptionEarlyPregnancy Option = "EarlyPregnancy" // 妊娠初期
-	OptionMidPregnancy   Option = "MidPregnancy"   // 妊娠中期
-	OptionLatePregnancy  Option = "LatePregnancy"  // 妊娠後期
-	OptionBreastfeeding  Option = "Breastfeeding"  // 授乳中
-	OptionMenstruation   Option = "Menstruation"   // 月経時
+	OptionEarlyPregnancy Option = "妊娠初期"
+	OptionMidPregnancy   Option = "妊娠中期"
+	OptionLatePregnancy  Option = "妊娠後期"
+	OptionBreastfeeding  Option = "授乳中"
+	OptionMenstruation   Option = "月経時"
 )
 
 type Age struct {
@@ -36,9 +37,21 @@ type Age struct {
 	Month int
 }
 
+func (a Age) String() string {
+	return fmt.Sprintf("%d.%d", a.Year, a.Month)
+}
+
 type NilFloat struct {
 	Float float64
 	Valid bool
+}
+
+func (n NilFloat) String() string {
+	if n.Valid {
+		return fmt.Sprintf("%.2f", n.Float)
+	} else {
+		return "-"
+	}
 }
 
 func NilFloatFromString(s string) NilFloat {
@@ -75,6 +88,10 @@ type Protein struct {
 type NilFloatRange struct {
 	Min NilFloat // 下限
 	Max NilFloat // 上限
+}
+
+func (n NilFloatRange) String() string {
+	return fmt.Sprintf("%s:%s", n.Min, n.Max)
 }
 
 func ProteinKcalToGram(kcal float64) float64 {

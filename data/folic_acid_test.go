@@ -4,8 +4,8 @@ import (
 	"testing"
 )
 
-func TestEnergyList(t *testing.T) {
-	list := EnergyList()
+func TestFolicAcidList(t *testing.T) {
+	list := FolicAcidList()
 	t.Logf("---- 男性")
 	for _, d := range list {
 		if d.Gender == GenderMale {
