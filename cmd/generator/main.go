@@ -37,4 +37,9 @@ func main() {
 	Iron(dir + "/iron_gen.go")
 	Zinc(dir + "/zinc_gen.go")
 	Copper(dir + "/copper_gen.go")
+	Manganese(dir + "/manganese_gen.go")
+	Iodine(dir + "/iodine_gen.go")
+	Selenium(dir + "/selenium_gen.go")
+	Chromium(dir + "/chromium_gen.go")
+	Molybdenum(dir + "/molybdenum_gen.go")
 }
